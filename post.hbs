@@ -1,0 +1,49 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{> cover-single}}
+
+<div class="main-content-area">
+	<div class="container">
+		<div class="row">
+			{{#post}}
+			<div class="col-md-10">
+				<article class="card card-single post-wrap {{post_class}}">
+					{{#if featured}}
+                    <div class="featured"></div>
+                    {{/if}}
+					<div class="single-head">
+						<h2 class="h1 title">{{title}}</h2>
+						<div class="meta">
+							<span  class="date"><i class="material-icons">&#xE192;</i>{{date format="MMMM DD, YYYY"}}</span>
+							<span class="Comment"><i class="material-icons">&#xE0B9;</i><a href="{{url}}#disqus_thread">0 Comments</a></span>
+							 {{#if tags}}
+							<span class="tag-list"><i class="material-icons">&#xE2C8;</i>{{tags separator=", "}}</span>
+							{{/if}}
+						</div>
+					</div>
+					<div class="card-header {{^if img_url}}no-image{{/if}}">
+						{{#if img_url}}
+						<img src="{{img_url feature_image}}">
+						{{/if}}
+					</div>
+					<div class="content">
+						<div class="post-entry">
+							{{content}}
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="col-md-2">
+				<div class="side-panel">
+					{{> about-author}}
+					<hr>
+					{{> share-links-single}}
+				</div>
+			</div>
+			{{> prev-next}}
+			{{> comment}}
+			{{/post}}
+		</div>
+	</div>
+</div>

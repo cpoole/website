@@ -1,0 +1,17 @@
+<div class="cover tag-cover" {{#if tag.feature_image}}style="background-image: url({{tag.feature_image}});"{{else}}style="background-image: url({{asset "images/bg-cover.jpg"}});"{{/if}}>
+	<div class="overlay">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h1 class="tag-title">{{tag.name}}</h1>
+					<div class="meta-info">
+						<span><i class="material-icons">&#xE85C;</i>{{plural pagination.total empty='0 Post' singular='% Post' plural='% Posts'}}</span>
+					</div>
+					{{#if tag.description}}
+					<p class="description h4">{{tag.description}}</p>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

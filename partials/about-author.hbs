@@ -1,0 +1,25 @@
+{{#author}}
+<div class="author">
+	<a href="{{url}}">
+		{{#if img_url profile_image}}
+		<img  class="avatar" src="{{img_url profile_image}}" alt="{{author.name}}" nopin="nopin">
+		{{else}}
+		<img  class="avatar" src="{{asset "images/default-user-image.jpg"}}" alt="{{author.name}}" nopin="nopin">
+		{{/if}}
+	</a>
+	<a href="{{url}}"><div class="name">{{name}}</div></a>
+	<div class="meta-info">
+		{{#if location}}
+		<span class="loaction"><i class="material-icons">&#xE0C8;</i>{{location}}</span>
+		{{/if}}
+		{{#if website}}
+		<span class="website"><i class="material-icons">&#xE157;</i><a href="{{website}}" targer="_BLANK">Website</a></span>
+		{{/if}}
+	</div>
+	{{#if bio}}
+	<div class="bio">
+		{{bio}}
+	</div>
+	{{/if}}
+</div>
+{{/author}}

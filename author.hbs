@@ -1,0 +1,56 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{> cover-author}}
+
+<div class="main-content-area">
+	<div class="container">
+		<div class="row">
+			{{#foreach posts}}
+			<div class="col-md-4 col-sm-6">
+				<article class="card post-wrap {{post_class}}">
+					{{#if featured}}
+                    <div class="featured"></div>
+                    {{/if}}
+					<div class="card-header {{^if img_url}}no-image{{/if}}">
+						<a href="{{{url}}}">
+							<div class="featured-image-container" {{#if img_url feature_image}} style="background-image: url({{img_url feature_image}});"{{/if}}>
+							</div>
+						</a>
+<!--						{{#author}}
+						<div class="author">
+							<a href="{{url}}">
+								{{#if img_url}}
+								<img  class="avatar" src="{{img_url profile_image}}" alt="{{author.name}}" nopin="nopin">
+								{{else}}
+								<img  class="avatar" src="{{asset "images/default-user-image.jpg"}}" alt="{{author.name}}" nopin="nopin">
+								{{/if}}
+								<span class="name">{{name}}</span>
+							</a>
+						</div>
+						{{/author}}-->
+					</div>
+					<div class="content">
+						<h2 class="h4 title"><a href="{{{url}}}">{{title}}</a></h2>
+						<div class="meta">
+							<span  class="date"><i class="material-icons">&#xE192;</i>{{date format="MMMM DD, YYYY"}}</span>
+							<span class="Comment"><i class="material-icons">&#xE0B9;</i><a href="{{url}}#disqus_thread">0 Comments</a></span>
+							 {{#if tags}}
+							<span class="tag-list"><i class="material-icons">&#xE2C8;</i>{{tags separator=", "}}</span>
+							{{/if}}
+						</div>
+						<div class="post-entry">
+							{{content words="30"}}
+						</div>
+					</div>
+					<div class="card-footer">
+						<a href="{{url}}" class="parmalink">Read More <i class="material-icons">&#xE5C8;</i></a>
+						{{> share-links}}
+					</div>
+				</article>
+			</div>
+			{{/foreach}}
+		</div>
+		{{pagination}}
+	</div>
+</div>

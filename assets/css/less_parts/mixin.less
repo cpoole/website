@@ -1,0 +1,49 @@
+/*====================================================
+	MIXINS
+====================================================*/
+.box-shadow (@string) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow:    @string;
+	box-shadow:         @string;
+}
+.border-radius (@string: 3px) {
+	-webkit-border-radius: @string;
+	-moz-border-radius:    @string;
+	border-radius:         @string;
+}
+.transition (@transition) {
+	-webkit-transition: @transition;  
+	-moz-transition: @transition;
+	-ms-transition: @transition; 
+	-o-transition:  @transition;
+	transition: @transition; 
+}
+.transform(@string){
+	-webkit-transform: @string;
+	-moz-transform: @string;
+	-ms-transform: @string;
+	-o-transform: @string;
+	transform: @string;
+}
+.opacity (@value: 1) {
+	-webkit-opacity: @value;
+	-moz-opacity: @value;
+	-ms-opacity: @value;
+	-o-opacity: @value;
+	opacity: @value;
+	@value-percentage: @value * 100;
+	filter: ~"alpha(opacity=(@{value-percentage}))";
+}
+.gradient(@start: #EEE, @stop: #FFF) {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, @start), color-stop(1, @stop));
+  background: -ms-linear-gradient(top, @start, @stop);
+  background: -moz-linear-gradient(center top, @start 0%, @stop 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@{stop}', endColorstr='@{start}'); /* for IE */
+}
+
+// .calc(@prop; @val) {
+//   @{prop}: calc(~'@{val}');
+//   @{prop}: -moz-calc(~'@{val}');
+//   @{prop}: -webkit-calc(~'@{val}');
+//   @{prop}: -o-calc(~'@{val}');
+// }

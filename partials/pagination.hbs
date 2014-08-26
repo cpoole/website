@@ -1,0 +1,19 @@
+<!-- start pagination -->
+<div class="row">
+	<div class="col-sm-12">
+		<!-- start pagination -->
+		<div class="pagination-wrap">
+			<div class="pagination clearfix" role="navigation">
+				{{#if prev}}
+				<a class="newer-posts ripple" href="{{page_url prev}}"> <i class="material-icons">&#xE5C4;</i> Newer Posts</a>
+				{{/if}}
+		        <span class="page-number">Page {{page}} of {{pages}}</span>
+		        {{#if next}}
+		        <a class="older-posts ripple" href="{{page_url next}}">Older Posts <i class="material-icons">&#xE5C8;</i></a>
+		        {{/if}}
+		    </div>
+		</div>
+		<!-- end pagination -->
+	</div>
+</div>
+<!-- end pagination -->
