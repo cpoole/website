@@ -1,7 +1,7 @@
 <div class="col-md-10">
 	<div class="prev-next-wrap clearfix">
 		{{#next_post}}
-		<a class="previous-post pull-left {{#if img_url}}" style="background-image: url({{img_url feature_image}}){{else}}no-image{{/if}}" href="{{url}}">
+		<a class="previous-post pull-left {{#if feature_image}}" style="background-image: url({{img_url feature_image}}){{else}}no-image{{/if}}" href="{{url}}">
 			<div class="prev-next-inner">
 				<span class="link-text"><i class="material-icons">&#xE5C4;</i>Previous</span>
 				<h3 class="title">{{title}}</h3>
@@ -10,7 +10,7 @@
 		</a>
 		{{/next_post}}
 	    {{#prev_post}}
-	    <a class="next-post pull-right {{#if img_url}}" style="background-image: url({{img_url feature_image}}){{else}}no-image{{/if}}" href="{{url}}">
+	    <a class="next-post pull-right {{#if feature_image}}" style="background-image: url({{img_url feature_image}}){{else}}no-image{{/if}}" href="{{url}}">
 			<div class="prev-next-inner">
 				<span class="link-text">Next<i class="material-icons">&#xE5C8;</i></span>
 				<h3 class="title">{{title}}</h3>

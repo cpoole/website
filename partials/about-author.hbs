@@ -1,7 +1,7 @@
 {{#author}}
 <div class="author">
 	<a href="{{url}}">
-		{{#if img_url profile_image}}
+		{{#if profile_image}}
 		<img  class="avatar" src="{{img_url profile_image}}" alt="{{author.name}}" nopin="nopin">
 		{{else}}
 		<img  class="avatar" src="{{asset "images/default-user-image.jpg"}}" alt="{{author.name}}" nopin="nopin">
